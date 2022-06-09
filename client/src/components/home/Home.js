@@ -11,7 +11,7 @@ const Home = () => {
             {/* <Adminpanel /> */}
             <Navbar />
             <CarouselSection />
-            {/* <Hero />  */}
+            {/* <Hero /> */}
             <Footer />
         </>
     );
