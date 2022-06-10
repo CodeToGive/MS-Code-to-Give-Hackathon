@@ -3,3 +3,4 @@ Lib
 Scripts
 *.cfg
 __pycache__
+/client/node_modules
