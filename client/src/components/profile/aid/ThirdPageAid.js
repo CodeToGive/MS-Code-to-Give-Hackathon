@@ -13,7 +13,7 @@ const ThirdPageAID = ({ textData }) => {
                                 <input
                                     type='file'
                                     placeholder='First Name'
-                                    className='w-full px-8 border rounded py-2 text-gray-700 focus:outline-none focus:border-violet-500 border-2 border-blue-900'
+                                    className='w-full px-8 border-2 rounded py-2 text-gray-700 focus:outline-none focus:border-violet-500 border-blue-900'
                                 />
                             </div>
                         </div>
