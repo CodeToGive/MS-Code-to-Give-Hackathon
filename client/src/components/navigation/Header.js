@@ -1,64 +1,20 @@
 import React, { useState } from 'react';
 import logo from '../../assets/images/logo.png';
 import avatar from '../../assets/images/avatar.png';
-import DropdownBtn from '../util/DropdownBtn';
-
-const styles = {
-    dropdown_link: 'block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 ',
-    home_link:
-        'block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0',
-    link: 'block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0',
-};
+import DropdownBtn from '../util/buttons/DropdownBtn';
+import { header_styles as styles, nav_elements } from './data';
 
 const Navbar = () => {
     const [navbarOpen, setNavbarOpen] = useState(false);
-    const [profileOpen, setProfileOpen] = useState(true);
-    const nav_elements = {
-        dropdown_nav: [
-            {
-                name: 'Dashboard',
-            },
-            {
-                name: 'Settings',
-            },
-            {
-                name: 'Earnings',
-            },
-            {
-                name: 'Sign out',
-            },
-        ],
-        nav: [
-            {
-                name: 'Home',
-                style_attr: 'home_link',
-            },
-            {
-                name: 'About',
-                style_attr: 'link',
-            },
-            {
-                name: 'Services',
-                style_attr: 'link',
-            },
-            {
-                name: 'Pricing',
-                style_attr: 'link',
-            },
-            {
-                name: 'Contact',
-                style_attr: 'link',
-            },
-        ],
-    };
+    const [profileOpen, setProfileOpen] = useState(false);
 
     return (
         <nav className='bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded  overflow-auto'>
-            <div className='container flex flex-wrap justify-between items-center mx-auto'>
+            <div className='container flex flex-wrap justify-between items-center mx-auto p-2'>
                 <a href='/' className='flex items-center'>
-                    <img src={logo} className='mr-3 h-6 sm:h-9' alt='Logo' />
+                    <img src={logo} className='mr-3 h-12 sm:h-14' alt='Logo' />
                     <span className='self-center text-xl font-semibold whitespace-nowrap '>
-                        Name
+                        St. Judes for Life
                     </span>
                 </a>
                 <div className='flex items-center md:order-2'>
@@ -74,13 +30,13 @@ const Navbar = () => {
                             className='w-8 h-8 rounded-full'
                             src={avatar}
                             alt='user'
-                            onClick={() => setProfileOpen(true)}
+                            onClick={() => setProfileOpen(false)}
                         />
                     </button>
 
                     <div
                         className={`${
-                            profileOpen ? 'hidden' : ''
+                            !profileOpen ? 'hidden' : ''
                         } z-50 my-4 text-base list-none bg-white rounded divide-y divide-gray-100 shadow `}
                         id='dropdown'
                         style={{
@@ -129,7 +85,7 @@ const Navbar = () => {
                             return (
                                 <li key={idx}>
                                     <a
-                                        href='/'
+                                        href={li['link']}
                                         className={styles[li['style_attr']]}
                                         aria-current='page'
                                     >

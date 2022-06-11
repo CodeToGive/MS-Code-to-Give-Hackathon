@@ -31,6 +31,7 @@ def admin_login(creds: AdminLogin, db: Session = Depends(get_db)):
     return {'access_token': token, 'token_type': 'bearer_token'}
 
 
+
 @admin_router.post('/create_admin', response_model=Admin)
 def create_admin(creds: AdminCreate, db: Session = Depends(get_db), verif=Depends(verify_token)):
 

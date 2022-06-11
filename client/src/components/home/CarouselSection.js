@@ -13,12 +13,11 @@ const CarouselSection = () => {
         showThumbs: false,
     };
     return (
-        // <div className='container my-2 mx-auto'>
         <div className='max-w-7xl my-1 mx-auto'>
             <Carousel className='flex justify-center' {...options}>
                 {[1, 2, 3].map((obj, idx) => {
                     return (
-                        <div key={idx} >
+                        <div key={idx}>
                             <img src={test} alt='img' />
                             <p className='legend'>Legend {obj}</p>
                         </div>

@@ -7,4 +7,5 @@ def create_hash(password: str):
 
 
 def verify_hash(attempt: str, stored: str):
-    return pwd_context.verify(attempt, stored)
+  return pwd_context.verify(attempt, stored)
+
