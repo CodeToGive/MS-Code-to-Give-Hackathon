@@ -12,7 +12,7 @@ import ScheduleMeet from './components/profile/ScheduleMeet';
 
 function App() {
     return (
-        <div>
+        <div className='min-h-screen'>
             <Header />
             <BrowserRouter>
                 <Routes>

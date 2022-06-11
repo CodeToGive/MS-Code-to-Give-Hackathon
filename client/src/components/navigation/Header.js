@@ -10,11 +10,11 @@ const Navbar = () => {
 
     return (
         <nav className='bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded  overflow-auto'>
-            <div className='container flex flex-wrap justify-between items-center mx-auto'>
+            <div className='container flex flex-wrap justify-between items-center mx-auto p-2'>
                 <a href='/' className='flex items-center'>
-                    <img src={logo} className='mr-3 h-6 sm:h-9' alt='Logo' />
+                    <img src={logo} className='mr-3 h-12 sm:h-14' alt='Logo' />
                     <span className='self-center text-xl font-semibold whitespace-nowrap '>
-                        Name
+                        St. Judes for Life
                     </span>
                 </a>
                 <div className='flex items-center md:order-2'>

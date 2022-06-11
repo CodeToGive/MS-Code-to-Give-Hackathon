@@ -8,13 +8,13 @@ import {
 
 const Footer = () => {
     return (
-        <footer className='p-4 bg-white sm:p-6 '>
-            <div className='md:flex md:justify-between'>
+        <footer className='p-4 bg-white sm:p-6 mx-auto'>
+            <div className='container md:flex md:justify-between mx-auto'>
                 <div className='mb-6 md:mb-0'>
                     <a href='/#' className='flex items-center'>
-                        <img src={logo} className='mr-3 h-8' alt='Logo' />
-                        <span className='self-center text-2xl font-semibold whitespace-nowrap '>
-                            Name
+                        <img src={logo} className='mr-3 h-14' alt='Logo' />
+                        <span className='self-center text-xl font-semibold whitespace-nowrap '>
+                            St. Judes for Life
                         </span>
                     </a>
                 </div>
@@ -45,23 +45,23 @@ const Footer = () => {
                 </div>
             </div>
             <hr className='my-6 border-gray-200 sm:mx-auto  lg:my-8' />
-            <div className='sm:flex sm:items-center sm:justify-between'>
+            <div className='container sm:flex sm:items-center sm:justify-between mx-auto'>
                 <span className='text-sm text-gray-500 sm:text-center '>
                     © 2022{' '}
                     <a href='https://flowbite.com' className='hover:underline'>
-                        Name
+                        St. Judes for Life
                     </a>
                     . All Rights Reserved.
                 </span>
                 <div className='flex mt-4 space-x-6 sm:justify-center sm:mt-0'>
-                    {social_media.map((svg, idx) => {
+                    {social_media.map((Icon, idx) => {
                         return (
                             <a
                                 key={idx}
                                 href='/#'
                                 className={styles['sm_link']}
                             >
-                                <img src={svg} alt='' />
+                                <Icon />
                             </a>
                         );
                     })}

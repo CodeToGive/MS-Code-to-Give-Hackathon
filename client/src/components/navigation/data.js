@@ -1,15 +1,17 @@
-import dribble from '../../assets/icons/svgs/dribble.svg';
-import facebook from '../../assets/icons/svgs/facebook.svg';
-import github from '../../assets/icons/svgs/github.svg';
-import instagram from '../../assets/icons/svgs/instagram.svg';
-import twitter from '../../assets/icons/svgs/twitter.svg';
+import {
+    BsFacebook,
+    BsInstagram,
+    BsTwitter,
+    BsYoutube,
+    BsLinkedin,
+} from 'react-icons/bs';
 
 const base_link_style = 'block py-2 px-4 text-sm';
 
 const header_styles = {
     dropdown_link: `${base_link_style} text-gray-700 hover:bg-gray-100`,
-    home_link: `${base_link_style} text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0`,
-    link: `${base_link_style} text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0`,
+    home_link: `${base_link_style} text-lg text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0`,
+    link: `${base_link_style} text-lg text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0`,
 };
 
 const nav_elements = {
@@ -55,7 +57,13 @@ const footer_styles = {
     sm_link: 'text-gray-500 hover:text-gray-900 ',
 };
 
-const social_media = [facebook, instagram, twitter, github, dribble];
+const social_media = [
+    BsFacebook,
+    BsInstagram,
+    BsTwitter,
+    BsYoutube,
+    BsLinkedin,
+];
 const footer_items = {
     footer: [
         {
