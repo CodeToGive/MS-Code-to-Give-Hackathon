@@ -9,6 +9,8 @@ import ProfilePageFinancial from './components/profile/ProfilePageFinancial';
 import Profile from './components/profile/Profile';
 import HowItWorks from './components/how-it-works/HowItWorks';
 import ScheduleMeet from './components/profile/ScheduleMeet';
+import Adminpanel from './components/admindashboard/Adminpanel';
+import AdminDashboard from './components/admin/AdminDashboard';
 
 function App() {
     return (
@@ -21,6 +23,8 @@ function App() {
                     <Route path='/how-it-works' element={<HowItWorks />} />
                     <Route path='/schedule-meet' element={<ScheduleMeet />} />
                     <Route path='/login' element={<Login />} />
+                    <Route path='/admin' element={<AdminDashboard />} />
+                    <Route path='/admin2' element={<Adminpanel />} />
                     <Route path='/apply-aid' element={<AppyAID />} />
                     <Route
                         path='ProfilePageFinancial'
