@@ -1,7 +1,8 @@
-/**/node_modules
-
 Include
 Lib
 Scripts
 *.cfg
 __pycache__
+
+/**/node_modules
+/**/venv

@@ -58,6 +58,7 @@ const Requests = () => {
                 {navtabs.map((tab, idx) => {
                     return (
                         <div
+                            key={idx}
                             className={`'tab-pane fade show active m-1 p-1 grow' ${
                                 tab.no !== activeTab && 'hidden'
                             }`}
