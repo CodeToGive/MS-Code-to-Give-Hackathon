@@ -49,6 +49,10 @@ code {
     height: 27rem;
 }
 
-.wsp{
-    margin-left: -50px;
+.max-w-8xl{
+    max-width: 89rem;
+}
+
+.max-h-40rem{
+    max-height: 40rem;
 }
