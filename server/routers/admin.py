@@ -28,7 +28,7 @@ def admin_login(creds: AdminLogin, db: Session = Depends(get_db)):
 
     token = create_access_token({'admin_username': creds.admin_username})
 
-    return {'access_token': token, 'token_type': 'bearer_token'}
+    return {'admin_access_token': token, 'token_type': 'bearer_token'}
 
 
 @admin_router.post('/create_admin', response_model=Admin)
@@ -53,9 +53,18 @@ def get_admins(db: Session = Depends(get_db), verif=Depends(verify_token)):
     return admins
 
 
+@admin_router.get('/get_current_user', response_model=Admin)
+def get_current_user(db: Session = Depends(get_db), verif=Depends(verify_token)):
+    username = verif.get('uid')
+    admin = db.query(models.Admins).filter(
+        models.Admins.admin_username == username).one_or_none()
+
+    return admin
+
+
 @admin_router.post('/create_user', response_model=User)
 def create_user(creds: UserCreate, db: Session = Depends(get_db), verif=Depends(verify_token)):
-    creds.password = hash(creds.password)
+    creds.password = create_hash(creds.password)
     new_user = models.Users(**creds.dict())
 
     if db.query(models.Users).filter(models.Users == creds).first():
