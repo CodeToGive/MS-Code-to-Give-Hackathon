@@ -6,7 +6,9 @@ import { header_styles as styles, nav_elements } from './data';
 import { useSelector } from 'react-redux';
 
 const Navbar = () => {
-    const { isLoggedIn } = useSelector((state) => state.adminAuth);
+    const { isLoggedIn: adminIsLoggedIn } = useSelector(
+        (state) => state.adminAuth
+    );
     const [navbarOpen, setNavbarOpen] = useState(false);
     const [profileOpen, setProfileOpen] = useState(false);
 
@@ -19,7 +21,7 @@ const Navbar = () => {
                         St. Judes for Life
                     </span>
                 </a>
-                {isLoggedIn && (
+                {adminIsLoggedIn && (
                     <div className='flex items-center md:order-2'>
                         <button
                             type='button'
@@ -103,7 +105,7 @@ const Navbar = () => {
                                 </li>
                             );
                         })}
-                        {!isLoggedIn && (
+                        {!adminIsLoggedIn ? (
                             <>
                                 <li>
                                     <a
@@ -121,6 +123,18 @@ const Navbar = () => {
                                         aria-current='page'
                                     >
                                         Admin Login
+                                    </a>
+                                </li>
+                            </>
+                        ) : (
+                            <>
+                                <li>
+                                    <a
+                                        href='/admin'
+                                        className={styles['link']}
+                                        aria-current='page'
+                                    >
+                                        Admin Profile
                                     </a>
                                 </li>
                             </>

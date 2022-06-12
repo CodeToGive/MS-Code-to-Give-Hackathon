@@ -14,8 +14,16 @@ import ScheduleMeet from './components/profile/ScheduleMeet';
 import Adminpanel from './components/admindashboard/Adminpanel';
 import AdminDashboard from './components/admin/AdminDashboard';
 import { alert } from './redux/slices/alert';
+import { loadAdmin } from './redux/slices/adminAuth';
 
 function App() {
+    const { token } = useSelector((state) => state.adminAuth);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(loadAdmin());
+    }, [dispatch]);
+
     return (
         <div className='min-h-screen'>
             <Header />

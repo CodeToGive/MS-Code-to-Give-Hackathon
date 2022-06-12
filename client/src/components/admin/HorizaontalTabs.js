@@ -8,7 +8,7 @@ const styles = {
         'nav-link w-full block font-medium  text-xs  leading-tight  uppercase  border-x-0 border-t-0 border-b-2 border-blue-500 px-6 py-3  my-2 hover:border-transparent hover:bg-gray-100  focus:border-transparent',
 };
 
-const HorizaontalTabs = ({ navtabs = [] }) => {
+const HorizaontalTabs = ({ data, navtabs = [] }) => {
     const [activeTab, setActiveTab] = useState(0);
 
     return (
@@ -40,31 +40,52 @@ const HorizaontalTabs = ({ navtabs = [] }) => {
                 })}
             </ul>
             <div className='tab-content' id='tabs-tabContent'>
-                {navtabs.map((tab, idx) => {
-                    return (
-                        <div
-                            key={idx}
-                            className={`'tab-pane fade show active grid grid-cols-1 md:grid-cols-5 m-1 p-1 grow' ${
-                                tab.no !== activeTab && 'hidden'
-                            }`}
-                        >
-                            <div className='col-span-3 shadow rounded-lg p-2'>
-                                <ul>
-                                    {[1, 2, 3].map((el, idx) => {
-                                        return (
-                                            <li key={idx}>
-                                                {tab.name} #{el}
-                                            </li>
-                                        );
-                                    })}
-                                </ul>
-                            </div>
-                            <div className='col-span-2 mx-auto'>
-                                <Form name={tab.name} />
-                            </div>
-                        </div>
-                    );
-                })}
+                <div
+                    className={`'tab-pane fade show active grid grid-cols-1 md:grid-cols-5 m-1 p-1 grow' ${
+                        0 !== activeTab && 'hidden'
+                    }`}
+                >
+                    <div className='col-span-3 shadow rounded-lg p-2'>
+                        <ul>
+                            {data['staff'].map((el, idx) => {
+                                return (
+                                    <li key={idx}>
+                                        {el.admin_username} {el.admin_name}
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                    </div>
+                    <div className='col-span-2 mx-auto'>
+                        <Form name={'Staff'} />
+                    </div>
+                </div>
+                <div
+                    className={`'tab-pane fade show active grid grid-cols-1 md:grid-cols-5 m-1 p-1 grow' ${
+                        1 !== activeTab && 'hidden'
+                    }`}
+                >
+                    <div className='col-span-3 shadow rounded-lg p-2'>
+                        <ul>
+                            {data['beneficiary'].map((el, idx) => {
+                                return (
+                                    <li key={idx}>
+                                        <div>{el.uid}</div>
+                                        <div>
+                                            {el.email} {el.phone_number}
+                                        </div>
+                                        <div>
+                                            {el.address} {el.city} {el.state}
+                                        </div>
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                    </div>
+                    <div className='col-span-2 mx-auto'>
+                        <Form name={'Beneficiary'} />
+                    </div>
+                </div>
             </div>
         </div>
     );

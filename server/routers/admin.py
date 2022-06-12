@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 from database import get_db
 from schemas import AdminLogin, AdminCreate, UserCreate, User, Admin
 from middleware.hasher import verify_hash, create_hash
-from middleware.oauth2 import create_access_token, verify_token
+from middleware.oauth2 import create_access_token, verify_admin_token, verify_user_token
 import models
 
 admin_router = APIRouter(
@@ -47,7 +47,7 @@ def admin_login(creds: AdminLogin, db: Session = Depends(get_db)):
 
 
 @admin_router.post('/create_admin', response_model=Admin)
-def create_admin(creds: AdminCreate, db: Session = Depends(get_db), verif=Depends(verify_token)):
+def create_admin(creds: AdminCreate, db: Session = Depends(get_db), verif=Depends(verify_admin_token)):
 
     creds.admin_password = create_hash(creds.admin_password)
     new_admin = models.Admins(**creds.dict())
@@ -62,7 +62,7 @@ def create_admin(creds: AdminCreate, db: Session = Depends(get_db), verif=Depend
 
 
 @admin_router.get('/get_admins', response_model=List[Admin])
-def get_admins(db: Session = Depends(get_db), verif=Depends(verify_token)):
+def get_admins(db: Session = Depends(get_db), verif=Depends(verify_admin_token)):
     admins = db.query(models.Admins).all()
 
     return admins
@@ -70,7 +70,7 @@ def get_admins(db: Session = Depends(get_db), verif=Depends(verify_token)):
 
 @admin_router.get('/get_current_user', response_model=Admin)
 def get_current_user(db: Session = Depends(get_db), verif=Depends(verify_token)):
-    username = verif.get('uid')
+    username = verif.get('admin_username')
     admin = db.query(models.Admins).filter(
         models.Admins.admin_username == username).one_or_none()
 
@@ -78,7 +78,7 @@ def get_current_user(db: Session = Depends(get_db), verif=Depends(verify_token))
 
 
 @admin_router.post('/create_user', response_model=User)
-def create_user(creds: UserCreate, db: Session = Depends(get_db), verif=Depends(verify_token)):
+def create_user(creds: UserCreate, db: Session = Depends(get_db), verif=Depends(verify_admin_token)):
     creds.password = create_hash(creds.password)
     new_user = models.Users(**creds.dict())
 
@@ -93,9 +93,21 @@ def create_user(creds: UserCreate, db: Session = Depends(get_db), verif=Depends(
 
 
 @admin_router.get('/get_user/{uid}', response_model=User)
-def get_user(uid: str, db: Session = Depends(get_db), verif=Depends(verify_token)):
+def get_user(uid: str, db: Session = Depends(get_db), verif=Depends(verify_admin_token)):
     user = db.query(models.Users).filter(models.Users.uid == uid).first()
     if not user:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND, detail='user not found!')
     return user
+
+
+@admin_router.post('/update', response_model=Admin)
+def update_admin(new_pwd: str, db: Session = Depends(get_db), verif=Depends(verify_admin_token)):
+    admin = db.query(models.Admins).filter(
+        models.Admins.admin_username == verif.get('admin_username'))
+
+    hashed_pwd = create_hash(new_pwd)
+
+    admin.update({'admin_password': hashed_pwd}, synchronize_session=False)
+    db.commit()
+    return admin.first()
