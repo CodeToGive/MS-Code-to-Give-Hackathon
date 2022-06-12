@@ -32,19 +32,19 @@ def admin_login(creds: AdminLogin, db: Session = Depends(get_db)):
     return {'admin_access_token': token, 'token_type': 'bearer_token'}
 
 
-@admin_router.post('/create_admin_temp', response_model=Admin)
-def create_admin_temp(creds: AdminCreateTemp, db: Session = Depends(get_db)):
+# @admin_router.post('/create_admin_temp', response_model=Admin)
+# def create_admin_temp(creds: AdminCreateTemp, db: Session = Depends(get_db)):
 
-    creds.admin_password = create_hash(creds.admin_password)
-    new_admin = models.Admins(**creds.dict())
+#     creds.admin_password = create_hash(creds.admin_password)
+#     new_admin = models.Admins(**creds.dict())
 
-    if db.query(models.Admins).filter(models.Admins.admin_username == creds.admin_username).first():
-        raise HTTPException(status_code=status.HTTP_409_CONFLICT,
-                            detail='user already registerd!')
-    db.add(new_admin)
-    db.commit()
+#     if db.query(models.Admins).filter(models.Admins.admin_username == creds.admin_username).first():
+#         raise HTTPException(status_code=status.HTTP_409_CONFLICT,
+#                             detail='user already registerd!')
+#     db.add(new_admin)
+#     db.commit()
 
-    return new_admin
+#     return new_admin
 
 
 @admin_router.post('/create_admin', response_model=Admin)
