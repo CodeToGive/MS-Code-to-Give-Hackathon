@@ -11,7 +11,6 @@ import ProfilePageFinancial from './components/profile/ProfilePageFinancial';
 import Profile from './components/profile/Profile';
 import HowItWorks from './components/how-it-works/HowItWorks';
 import ScheduleMeet from './components/profile/ScheduleMeet';
-import Adminpanel from './components/admindashboard/Adminpanel';
 import AdminDashboard from './components/admin/AdminDashboard';
 import { AboutUs } from './components/navigation/AboutUs';
 import { loadAdmin } from './redux/slices/adminAuth';
@@ -37,7 +36,6 @@ function App() {
                     <Route path='/admin-login' element={<AdminLogin />} />
                     <Route path='/aboutus' element={<AboutUs/>} />
                     <Route path='/admin' element={<AdminDashboard />} />
-                    <Route path='/admin2' element={<Adminpanel />} />
                     <Route path='/apply-aid' element={<AppyAID />} />
                     <Route
                         path='ProfilePageFinancial'

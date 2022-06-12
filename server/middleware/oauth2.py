@@ -27,7 +27,6 @@ def verify_admin_token(token: str = Depends(oauth2_scheme_admin)):
     try:
         content = jwt.decode(token, TOKEN_SECRET, algorithms=[ALGORITHM])
         username = content.get('admin_username')
-        print(username)
         if not username:
             raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED,
                                 detail="Could not validate credentials", headers={"WWW-Authenticate": "Bearer"})

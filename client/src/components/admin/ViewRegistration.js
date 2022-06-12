@@ -1,7 +1,7 @@
 import React from 'react';
 import HorizaontalTabs from './HorizaontalTabs';
 
-const View_Registration = ({ admins, users }) => {
+const View_Registration = ({ admins, users, }) => {
     const navtabs = [
         {
             no: 0,

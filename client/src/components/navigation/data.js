@@ -38,7 +38,7 @@ const nav_elements = {
         {
             name: 'About',
             style_attr: 'link',
-            link: '/about',
+            link: '/aboutus',
         },
         {
             name: 'How it Works',
