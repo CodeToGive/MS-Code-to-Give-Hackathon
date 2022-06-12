@@ -38,6 +38,56 @@ export const getUsers = createAsyncThunk('admin/getUsers', async (thunkAPI) => {
     }
 });
 
+export const createAdmin = createAsyncThunk(
+    'admin/createAdmin',
+    async ({ admin_username, admin_name, admin_email }, thunkAPI) => {
+        try {
+            const response = await axios.post(`${url}admins/create_admin`, {
+                admin_username,
+                admin_name,
+                admin_email,
+            });
+            console.log(response.data);
+            return response.data;
+        } catch (error) {
+            const message =
+                (error.response &&
+                    error.response.data &&
+                    error.response.data.message) ||
+                error.message ||
+                error.toString();
+            thunkAPI.dispatch(alert(message));
+            return thunkAPI.rejectWithValue();
+        }
+    }
+);
+
+export const createUser = createAsyncThunk(
+    'admin/createUser',
+    async ({ uid, name, email }, thunkAPI) => {
+        try {
+            const response = await axios.post(`${url}admins/create_user`, {
+                uid,
+                email,
+                phone_number: Math.floor(Math.random() * 100000000000),
+                address: '',
+                paypal_acc: '',
+            });
+            console.log(response.data);
+            return response.data;
+        } catch (error) {
+            const message =
+                (error.response &&
+                    error.response.data &&
+                    error.response.data.message) ||
+                error.message ||
+                error.toString();
+            thunkAPI.dispatch(alert(message));
+            return thunkAPI.rejectWithValue();
+        }
+    }
+);
+
 const authSlice = createSlice({
     name: 'auth',
     initialState: {

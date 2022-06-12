@@ -9,9 +9,12 @@ class Admin(BaseModel):
     class Config:
         orm_mode = True
 
+class AdminCreateTemp(Admin):
+    admin_password:str
+    admin_email: EmailStr
 
 class AdminCreate(Admin):
-    admin_password: str
+    admin_email: EmailStr
 
 
 class AdminLogin(BaseModel):
@@ -33,7 +36,6 @@ class User(BaseModel):
 
 
 class UserCreate(User):
-    password: str
     paypal_acc: constr(max_length=16)
 
 

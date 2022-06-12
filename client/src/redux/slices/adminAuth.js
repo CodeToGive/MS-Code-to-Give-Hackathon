@@ -16,7 +16,6 @@ export const loadAdmin = createAsyncThunk(
                 delete axios.defaults.headers.common['Authorization'];
             }
         }
-
         try {
             const response = await axios.get(`${url}admins/get_current_user`);
             return response.data;

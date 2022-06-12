@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 from database import get_db
 from schemas import User, UserLogin, Document
 from middleware.hasher import create_hash, verify_hash
-from middleware.oauth2 import create_access_token, verify_user_token
+from middleware.oauth2 import create_access_token, verify_user_token, verify_admin_token
 import models
 
 user_router = APIRouter(
@@ -41,7 +41,7 @@ def get_current_user(db: Session = Depends(get_db), verif=Depends(verify_user_to
 
 
 @user_router.get('/get_all_users', response_model=List[User])
-def get_current_user(db: Session = Depends(get_db), verif=Depends(verify_token)):
+def get_current_user(db: Session = Depends(get_db), verif=Depends(verify_admin_token)):
     users = db.query(models.Users).all()
 
     return users

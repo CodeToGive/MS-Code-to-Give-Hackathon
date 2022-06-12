@@ -1,8 +1,10 @@
+import secrets
+import string
 from typing import List
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from database import get_db
-from schemas import AdminLogin, AdminCreate, UserCreate, User, Admin
+from schemas import AdminLogin, AdminCreate, UserCreate, User, Admin, AdminCreateTemp
 from middleware.hasher import verify_hash, create_hash
 from middleware.oauth2 import create_access_token, verify_admin_token, verify_user_token
 import models
@@ -25,32 +27,33 @@ def admin_login(creds: AdminLogin, db: Session = Depends(get_db)):
     if not verify_hash(creds.admin_password, admin.admin_password):
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED, detail='Invalid Credentials 2')
-
     token = create_access_token({'admin_username': creds.admin_username})
 
     return {'admin_access_token': token, 'token_type': 'bearer_token'}
 
 
-# @admin_router.post('/create_admin_temp', response_model=Admin)
-# def create_admin_temp(creds: AdminCreate, db: Session = Depends(get_db)):
+@admin_router.post('/create_admin_temp', response_model=Admin)
+def create_admin_temp(creds: AdminCreateTemp, db: Session = Depends(get_db)):
 
-#     creds.admin_password = create_hash(creds.admin_password)
-#     new_admin = models.Admins(**creds.dict())
+    creds.admin_password = create_hash(creds.admin_password)
+    new_admin = models.Admins(**creds.dict())
 
-#     if db.query(models.Admins).filter(models.Admins.admin_username == creds.admin_username).first():
-#         raise HTTPException(status_code=status.HTTP_409_CONFLICT,
-#                             detail='user already registerd!')
-#     db.add(new_admin)
-#     db.commit()
+    if db.query(models.Admins).filter(models.Admins.admin_username == creds.admin_username).first():
+        raise HTTPException(status_code=status.HTTP_409_CONFLICT,
+                            detail='user already registerd!')
+    db.add(new_admin)
+    db.commit()
 
-#     return new_admin
+    return new_admin
 
 
 @admin_router.post('/create_admin', response_model=Admin)
 def create_admin(creds: AdminCreate, db: Session = Depends(get_db), verif=Depends(verify_admin_token)):
+    pwd = ''.join(secrets.choice(string.ascii_uppercase + string.digits)
+                  for _ in range(8))
 
-    creds.admin_password = create_hash(creds.admin_password)
     new_admin = models.Admins(**creds.dict())
+    new_admin.admin_password = create_hash(pwd)
 
     if db.query(models.Admins).filter(models.Admins.admin_username == creds.admin_username).first():
         raise HTTPException(status_code=status.HTTP_409_CONFLICT,
@@ -69,8 +72,8 @@ def get_admins(db: Session = Depends(get_db), verif=Depends(verify_admin_token))
 
 
 @admin_router.get('/get_current_user', response_model=Admin)
-def get_current_user(db: Session = Depends(get_db), verif=Depends(verify_token)):
-    username = verif.get('admin_username')
+def get_current_user(db: Session = Depends(get_db), verif=Depends(verify_admin_token)):
+    username = verif
     admin = db.query(models.Admins).filter(
         models.Admins.admin_username == username).one_or_none()
 
@@ -79,9 +82,12 @@ def get_current_user(db: Session = Depends(get_db), verif=Depends(verify_token))
 
 @admin_router.post('/create_user', response_model=User)
 def create_user(creds: UserCreate, db: Session = Depends(get_db), verif=Depends(verify_admin_token)):
-    creds.password = create_hash(creds.password)
-    new_user = models.Users(**creds.dict())
+    pwd = ''.join(secrets.choice(string.ascii_uppercase + string.digits)
+                  for _ in range(8))
 
+    new_user = models.Users(**creds.dict())
+    new_user.password = create_hash(pwd)
+    
     if db.query(models.Users).filter(models.Users == creds).first():
         raise HTTPException(status_code=status.HTTP_409_CONFLICT,
                             detail='user already registerd!')

@@ -12,7 +12,7 @@ class Users(Base):
     uid = Column(String, nullable=False, unique=True, primary_key=True)
     email = Column(String, nullable=False, unique=True)
     password = Column(String, nullable=False)
-    phone_number = Column(String, nullable=False, unique=True)
+    phone_number = Column(String, nullable=False)
     paypal_acc = Column(String, nullable=False, unique=True)
     address = Column(String, nullable=False, unique=True)
     created_at = Column(TIMESTAMP, nullable=False,
@@ -62,6 +62,7 @@ class Admins(Base):
                             unique=True, primary_key=True)
     admin_name = Column(String, nullable=False)
     admin_password = Column(String, nullable=False)
+    admin_email = Column(String, nullable=False)
 
 
 class ApplicationAdmin(Base):
