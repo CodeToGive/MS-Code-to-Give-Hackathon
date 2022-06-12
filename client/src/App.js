@@ -16,23 +16,6 @@ import AdminDashboard from './components/admin/AdminDashboard';
 import { alert } from './redux/slices/alert';
 
 function App() {
-    const { alerts } = useSelector((state) => state.alert);
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(
-            alert({
-                msg: 'Text Command',
-                alertType: 'success',
-            })
-        );
-        console.log('Hello');
-    }, []);
-
-    // useEffect(() => {
-    //     console.log(alerts);
-    // }, [alerts]);
-
     return (
         <div className='min-h-screen'>
             <Header />

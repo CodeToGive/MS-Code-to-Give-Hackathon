@@ -11,7 +11,7 @@ const Navbar = () => {
     const [profileOpen, setProfileOpen] = useState(false);
 
     return (
-        <nav className='bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded  overflow-auto'>
+        <nav className='bg-white shadow m-2 border-gray-200 px-2 sm:px-4 py-2.5 rounded  overflow-auto'>
             <div className='container flex flex-wrap justify-between items-center mx-auto p-2'>
                 <a href='/' className='flex items-center'>
                     <img src={logo} className='mr-3 h-12 sm:h-14' alt='Logo' />

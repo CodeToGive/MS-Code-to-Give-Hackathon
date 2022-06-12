@@ -1,32 +1,56 @@
-import React from 'react';
+import React, { useState } from 'react';
+import '../../../node_modules/awesome-react-steps/lib/css/arrows.css';
+import { Arrows } from 'awesome-react-steps';
+import { useEffect } from 'react';
 
 const Howitworks = () => {
-  return (
-    <>
-    <div className='inline-flex items-start ml-7 mx-5 mt-10 md:flex-wrap'>
-      <div className='max-w-8xl mr-5'><div className='text-4xl text-orange-500 font-extrabold '>How It Works</div>
-      <p className='text-justify text-2xl text-gray-600 border-orange-400 border-2 px-4 py-3 rounded-2xl hover:text-black'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae sed unde corporis ullam cumque nisi voluptas possimus est? Similique sit, debitis molestias consequatur ab unde voluptate error modi sint distinctio?    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae sed unde corporis ullam cumque nisi voluptas possimus est? Similique sit, debitis molestias consequatur ab unde voluptate error modi sint distinctio?    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae sed unde corporis ullam cumque nisi voluptas possimus est? Similique sit, debitis molestias consequatur ab unde voluptate error modi sint distinctio? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae sed unde corporis ullam cumque nisi voluptas possimus est? Similique sit, debitis molestias consequatur ab unde voluptate error modi sint distinctio?</p></div>
-    </div>
-    <div className='max-w-8xl ml-7 mx-5 mt-10 rounded-3xl inline-flex flex-wrap bg-orange-500 border-box'>
-      <div className='ml-8 mx-5 my-7 h-80 border-2 w-60 rounded-3xl hover:shadow-md hover:scale-110 bg-gray-400 hover:border-gray-700'>
-      <div className='m-3 overflow-y-scroll scrollbar-hide inline-block h-72 font-medium'><div className='text-2xl text-center text-white font-bold'>STEP 1: FILL IN YOUR DETAILS</div>
-      <p className='text-justify text-xl'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae sed unde corporis ullam cumque nisi voluptas possimus est? Similique sit, debitis molestias consequatur ab unde voluptate error modi sint distinctio?</p></div>
-      </div>
-      <div className='mx-5 my-7 h-80 border-2 w-60 rounded-3xl hover:shadow-md hover:scale-110 bg-gray-400 hover:border-gray-700'>
-        <div className='m-3 overflow-y-scroll scrollbar-hide inline-block h-72 font-medium'><div className='text-2xl text-center text-white font-bold'>STEP 2: MAKE AN AID REQUEST</div>
-      <p className='text-justify text-xl'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae sed unde corporis ullam cumque nisi voluptas possimus est? Similique sit, debitis molestias consequatur ab unde voluptate error modi sint distinctio?</p></div></div>
-      <div className='mx-5 my-7 h-80 border-2 w-60 rounded-3xl hover:shadow-md hover:scale-110 bg-gray-400 hover:border-gray-700'>
-        <div className='m-3 overflow-y-scroll scrollbar-hide inline-block h-72 font-medium'><div className='text-2xl text-center text-white font-bold'>STEP 3: UPLOAD THE REQUIRED DOCUMENTS</div>
-      <p className='text-justify text-xl'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae sed unde corporis ullam cumque nisi voluptas possimus est? Similique sit, debitis molestias consequatur ab unde voluptate error modi sint distinctio?</p></div></div>
-      <div className='mx-5 my-7 h-80 border-2 w-60 rounded-3xl hover:shadow-md hover:scale-110 bg-gray-400 hover:border-gray-700'>
-        <div className='m-3 overflow-y-scroll scrollbar-hide inline-block h-72 font-medium'><div className='text-2xl text-center text-white font-bold'>STEP 4: WAIT FOR AID ACCEPT/REJECT</div>
-      <p className='text-justify text-xl'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae sed unde corporis ullam cumque nisi voluptas possimus est? Similique sit, debitis molestias consequatur ab unde voluptate error modi sint distinctio?</p></div></div>
-      <div className='mr-8 mx-5 my-7 h-80 border-2 w-60 rounded-3xl hover:shadow-md hover:scale-110 bg-gray-400 hover:border-gray-700'>
-        <div className='m-3 overflow-y-scroll scrollbar-hide inline-block h-72 font-medium'><div className='text-2xl text-center text-white font-bold'>STEP 5: GET AID</div>
-      <p className='text-justify text-xl'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae sed unde corporis ullam cumque nisi voluptas possimus est? Similique sit, debitis molestias consequatur ab unde voluptate error modi sint distinctio?</p></div></div>
-    </div>
-    </>
-  )
+    const data = [
+        'FILL IN YOUR DETAILS',
+        'MAKE AN AID REQUEST',
+        'UPLOAD THE REQUIRED DOCUMENTS',
+        'WAIT FOR AID ACCEPT/REJECT',
+        'GET AID',
+    ];
+    const [activeStep, setActiveStep] = useState(0);
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setActiveStep((activeStep + 1) % data.length);
+        }, 5000);
+        return () => clearInterval(intervalId); //This is important
+    }, [activeStep, data.length]);
+
+    return (
+        <div className=' m-2 p-2'>
+            <div className='inline-flex items-start ml-7 mx-5 mt-10 md:flex-wrap'>
+                <div className='max-w-8xl mr-5'>
+                    <div className='text-4xl text-orange-500 font-extrabold '>
+                        How It Works
+                    </div>
+                </div>
+            </div>
+            <div className='mx-4 my-2 p-4'>
+                <Arrows
+                    model={{
+                        steps: data.map((el) => {
+                            return {
+                                label: el,
+                            };
+                        }),
+                        current: activeStep,
+                    }}
+                />
+                <div className='flex flex-wrap justify-center'>
+                    <a
+                        className='button bg-orange-500 text-white text-lg hover:bg-orange-600 rounded-md px-4 py-2 my-4 mx-auto'
+                        href='/how-it-works'
+                    >
+                        Know More
+                    </a>
+                </div>
+            </div>
+        </div>
+    );
 };
 
 export default Howitworks;

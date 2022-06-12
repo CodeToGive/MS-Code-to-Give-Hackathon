@@ -21,38 +21,40 @@ code {
         monospace;
 }
 
-.w-50rem{
+.w-50rem {
     width: 50rem;
 }
 
-.w-120{
+.w-120 {
     width: 46.5rem;
 }
 
-.w-110{
+.w-110 {
     width: 43rem;
 }
 
-.w-125{
+.w-125 {
     width: 47.3rem;
 }
 
-.h-41rem{
+.h-41rem {
     height: 42.5rem;
 }
 
-.h-39rem{
+.h-39rem {
     height: 40rem;
 }
 
-.h-27rem{
+.h-27rem {
     height: 27rem;
 }
 
-.max-w-8xl{
+.max-w-8xl {
     max-width: 89rem;
 }
 
-.max-h-40rem{
+.max-h-40rem {
     max-height: 40rem;
 }
+
+
