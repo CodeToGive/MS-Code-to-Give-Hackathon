@@ -43,6 +43,7 @@ const HorizaontalTabs = ({ navtabs = [] }) => {
                 {navtabs.map((tab, idx) => {
                     return (
                         <div
+                            key={idx}
                             className={`'tab-pane fade show active grid grid-cols-1 md:grid-cols-5 m-1 p-1 grow' ${
                                 tab.no !== activeTab && 'hidden'
                             }`}

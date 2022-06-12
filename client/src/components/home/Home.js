@@ -1,9 +1,14 @@
 import React from 'react';
+import CarouselSection from './CarouselSection';
+import Whoarewe from './Whoarewe';
+import Howitworks from './Howitworks';
 
 const Home = () => {
     return (
-        <div className='h-48'>
-            <h1>Home World</h1>
+        <div className='container mx-auto'>
+            <CarouselSection />
+            <Whoarewe />
+            <Howitworks />
         </div>
     );
 };

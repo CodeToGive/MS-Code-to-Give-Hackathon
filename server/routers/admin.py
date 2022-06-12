@@ -20,15 +20,30 @@ def admin_login(creds: AdminLogin, db: Session = Depends(get_db)):
 
     if not admin:
         raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED, detail='Invalid Credentials')
+            status_code=status.HTTP_401_UNAUTHORIZED, detail='Invalid Credentials 1')
 
     if not verify_hash(creds.admin_password, admin.admin_password):
         raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED, detail='Invalid Credentials')
+            status_code=status.HTTP_401_UNAUTHORIZED, detail='Invalid Credentials 2')
 
     token = create_access_token({'admin_username': creds.admin_username})
 
     return {'admin_access_token': token, 'token_type': 'bearer_token'}
+
+
+# @admin_router.post('/create_admin_temp', response_model=Admin)
+# def create_admin_temp(creds: AdminCreate, db: Session = Depends(get_db)):
+
+#     creds.admin_password = create_hash(creds.admin_password)
+#     new_admin = models.Admins(**creds.dict())
+
+#     if db.query(models.Admins).filter(models.Admins.admin_username == creds.admin_username).first():
+#         raise HTTPException(status_code=status.HTTP_409_CONFLICT,
+#                             detail='user already registerd!')
+#     db.add(new_admin)
+#     db.commit()
+
+#     return new_admin
 
 
 @admin_router.post('/create_admin', response_model=Admin)
