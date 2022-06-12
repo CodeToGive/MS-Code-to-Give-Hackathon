@@ -70,7 +70,8 @@ def get_admins(db: Session = Depends(get_db), verif=Depends(verify_token)):
 
 @admin_router.get('/get_current_user', response_model=Admin)
 def get_current_user(db: Session = Depends(get_db), verif=Depends(verify_token)):
-    username = verif.get('uid')
+    username = verif.get('admin_username')
+    print(username,verif)
     admin = db.query(models.Admins).filter(
         models.Admins.admin_username == username).one_or_none()
 

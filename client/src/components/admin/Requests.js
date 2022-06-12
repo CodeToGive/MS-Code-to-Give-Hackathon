@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const styles = {
     'tab-link':
@@ -26,6 +26,10 @@ const navtabs = [
 const Requests = () => {
     const [activeTab, setActiveTab] = useState(0);
 
+    useEffect(() => {
+        console.log(activeTab);
+    }, [activeTab]);
+
     return (
         <div>
             <ul
@@ -43,7 +47,9 @@ const Requests = () => {
                             <button
                                 href={`tabs-${tab.id}`}
                                 className={`${styles['tab-link']} ${
-                                    idx !== activeTab && 'border-transparent'
+                                    tab.no !== activeTab
+                                        ? 'border-transparent'
+                                        : ''
                                 }`}
                                 id={`tabs-${tab.id}-tab`}
                                 onClick={() => setActiveTab(tab.no)}
@@ -59,8 +65,8 @@ const Requests = () => {
                     return (
                         <div
                             key={idx}
-                            className={`'tab-pane fade show active m-1 p-1 grow' ${
-                                tab.no !== activeTab && 'hidden'
+                            className={`tab-pane fade show active m-1 p-1 grow ${
+                                tab.no !== activeTab ? 'hidden' : ''
                             }`}
                         >
                             <div className='shadow rounded-lg p-2'>

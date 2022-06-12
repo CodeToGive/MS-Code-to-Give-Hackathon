@@ -40,6 +40,13 @@ def get_current_user(db: Session = Depends(get_db), verif=Depends(verify_token))
     return user
 
 
+@user_router.get('/get_all_users', response_model=List[User])
+def get_current_user(db: Session = Depends(get_db), verif=Depends(verify_token)):
+    users = db.query(models.Users).all()
+
+    return users
+
+
 @user_router.post('/upload')
 def upload_docs(docs: List[Document], verif=Depends(verify_token)):
     for document in docs:
