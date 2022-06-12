@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@import '~@fortawesome/fontawesome-free/css/fontawesome';
+@import '~@fortawesome/fontawesome-free/css/regular';
+@import '~@fortawesome/fontawesome-free/css/solid';
+@import '~@fortawesome/fontawesome-free/css/brands';
+
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
@@ -14,4 +19,36 @@ body {
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
         monospace;
+}
+
+.w-50rem{
+    width: 50rem;
+}
+
+.w-120{
+    width: 46.5rem;
+}
+
+.w-110{
+    width: 43rem;
+}
+
+.w-125{
+    width: 47.3rem;
+}
+
+.h-41rem{
+    height: 42.5rem;
+}
+
+.h-39rem{
+    height: 40rem;
+}
+
+.h-27rem{
+    height: 27rem;
+}
+
+.wsp{
+    margin-left: -50px;
 }

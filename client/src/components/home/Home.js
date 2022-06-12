@@ -1,13 +1,10 @@
 import React from 'react';
-import Header from '../navigation/Header';
-import Footer from '../navigation/Footer';
 
 const Home = () => {
     return (
-        <>
-            <Header />
-            <Footer />  
-        </>
+        <div className='h-48'>
+            <h1>Home World</h1>
+        </div>
     );
 };
 

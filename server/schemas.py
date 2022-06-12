@@ -49,3 +49,6 @@ class Document(BaseModel):
     file: UploadFile
     document_name: constr(max_length=20)
     user_id: str
+
+    class Config:
+        orm_mode = True
