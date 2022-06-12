@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 import models
 from database import engine
-from routers import admin
+from routers import admin, user
 
 models.Base.metadata.create_all(bind=engine)
 
@@ -21,3 +21,4 @@ app.add_middleware(
 
 
 app.include_router(admin.admin_router)
+app.include_router(user.user_router)

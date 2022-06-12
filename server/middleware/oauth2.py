@@ -13,11 +13,11 @@ TOKEN_EXPIRE_MINUTES = 30
 
 
 def create_access_token(data: dict):
+    to_encode = data.copy()
+    expire = datetime.utcnow()+timedelta(minutes=TOKEN_EXPIRE_MINUTES)
+    to_encode.update({'exp': expire})
 
-    expire = str(datetime.utcnow()+timedelta(minutes=TOKEN_EXPIRE_MINUTES))
-    data.update({'expire': expire})
-
-    encoded = jwt.encode(data, TOKEN_SECRET, algorithm=ALGORITHM)
+    encoded = jwt.encode(to_encode, TOKEN_SECRET, algorithm=ALGORITHM)
 
     return encoded
 
@@ -28,8 +28,8 @@ def verify_token(token: str = Depends(oauth2_scheme)):
 
         if not content:
             raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED,
-                                detail=f"Could not validate credentials", headers={"WWW-Authenticate": "Bearer"})
+                                detail="Could not validate credentials", headers={"WWW-Authenticate": "Bearer"})
     except JWTError:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED,
-                            detail=f"Could not validate credentials", headers={"WWW-Authenticate": "Bearer"})
+                            detail="Could not validate credentials", headers={"WWW-Authenticate": "Bearer"})
     return content

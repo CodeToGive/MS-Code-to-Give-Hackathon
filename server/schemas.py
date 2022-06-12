@@ -37,6 +37,14 @@ class UserCreate(User):
     paypal_acc: constr(max_length=16)
 
 
+class UserLogin(BaseModel):
+    uid: str
+    password: str
+
+    class Config:
+        orm_mode: True
+
+
 class Document(BaseModel):
     file: UploadFile
     document_name: constr(max_length=20)
