@@ -3,6 +3,7 @@ import CarouselSection from './CarouselSection';
 import Whoarewe from './Whoarewe';
 import Howitworks from './Howitworks';
 import Benefeciaries from './Benefeciaries';
+import { useTranslation,Trans } from 'react-i18next';
 
 const Home = () => {
     return (

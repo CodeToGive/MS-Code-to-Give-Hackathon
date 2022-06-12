@@ -5,6 +5,9 @@ module.exports = {
             colors: {
                 // 'primary': '#f58220',
                 // 'secondary': '#006131',
+                'custom-primary': '#f58220',
+                'custom-primary-dark': '#CC640B',
+                'custom-secondary': '#006131',
             },
             // screens: {
             //   'sm': {'min': '640px', 'max': '767px'},

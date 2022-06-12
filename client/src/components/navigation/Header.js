@@ -3,17 +3,23 @@ import logo from '../../assets/images/logo.png';
 import avatar from '../../assets/images/avatar.png';
 import DropdownBtn from '../util/buttons/DropdownBtn';
 import { header_styles as styles, nav_elements } from './data';
+<<<<<<< HEAD
 import { useSelector } from 'react-redux';
 
 const Navbar = () => {
     const { isLoggedIn: adminIsLoggedIn } = useSelector(
         (state) => state.adminAuth
     );
+=======
+
+const Navbar = () => {
+>>>>>>> eb4e03392eb173ee42470217d11366303d5d8508
     const [navbarOpen, setNavbarOpen] = useState(false);
     const [profileOpen, setProfileOpen] = useState(false);
 
     return (
         <nav className='bg-white shadow m-2 border-gray-200 px-2 sm:px-4 py-2.5 rounded  overflow-auto'>
+
             <div className='container flex flex-wrap justify-between items-center mx-auto p-2'>
                 <a href='/' className='flex items-center'>
                     <img src={logo} className='mr-3 h-12 sm:h-14' alt='Logo' />

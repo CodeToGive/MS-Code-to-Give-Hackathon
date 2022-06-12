@@ -45,7 +45,6 @@ const nav_elements = {
             style_attr: 'link',
             link: 'how-it-works',
         },
-
     ],
 };
 
