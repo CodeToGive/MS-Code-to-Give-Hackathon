@@ -10,7 +10,7 @@ const Home = () => {
             <CarouselSection />
             <Whoarewe />
             <Howitworks />
-            <Beneficiaries />
+            <Benefeciaries />
         </div>
     );
 };
