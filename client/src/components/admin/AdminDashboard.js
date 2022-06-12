@@ -3,11 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import Donation from './Donation';
 import Requests from './Requests';
 import ViewRegistration from './ViewRegistration';
-import { getAdmins, getUsers } from '../../redux/slices/admin';
+import { getAdmins, getUsers, getAllAid } from '../../redux/slices/admin';
 
 const AdminDashboard = () => {
     const {
-        admin: { admins, users },
+        admin: { admins, users, aids },
         adminAuth: { admin },
     } = useSelector((state) => state);
     const dispatch = useDispatch();
@@ -15,13 +15,14 @@ const AdminDashboard = () => {
     useEffect(() => {
         dispatch(getAdmins());
         dispatch(getUsers());
+        dispatch(getAllAid());
     }, [admin, dispatch]);
 
     return (
         <div className='m-2'>
             <Donation />
+            <Requests aids={aids} />
             <ViewRegistration admins={admins} users={users} />
-            <Requests />
         </div>
     );
 };
