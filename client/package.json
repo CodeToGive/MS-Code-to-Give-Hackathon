@@ -43,10 +43,7 @@
         "eject": "react-scripts eject",
         "dev": "npm run development",
         "development": "mix",
-<<<<<<< HEAD
-=======
     "gentran": "generate-translations",
->>>>>>> eb4e03392eb173ee42470217d11366303d5d8508
     "watch": "mix watch",
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
