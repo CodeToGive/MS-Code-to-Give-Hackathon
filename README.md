@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="https://utsavk28.github.io/HostedAssets/DetectiveDogLogo.png" alt="Logo" width="240" >
+    <img src="https://utsavk28.github.io/MS-Code-to-Give-Hackathon/client/src/assets/images/logo.png" alt="Logo" width="240" >
   </a>
 
   <h2 align="center">St. Judes For Life</h2>
@@ -154,22 +154,15 @@ This website is for St. Judes For Life(SJFL) organisation started by Morgan Stan
 
 ## Tech Stack
 
-<a href="https://reactjs.org/" title="React"><img src="https://github.com/get-icon/geticon/raw/master/icons/html-5.svg" alt="Reactjs" width="31px" height="31px"></a>
-<a href="https://tailwindcss.com/" title="Tailwind"><img src="https://github.com/get-icon/geticon/blob/master/icons/tailwindcss-icon.svg" alt="TailwindCSS" width="31px" height="31px"></a>
-<a href="https://www.postgresql.org/" title="Postgresql"><img src="https://github.com/get-icon/geticon/raw/master/icons/javascript.svg" alt="Postgresql" width="31px" height="31px"></a>
-<a href="https://fastapi.tiangolo.com/" title="FastAPI"><img src="https://github.com/get-icon/geticon/raw/master/icons/python.svg" alt="FastAPI" width="31px" height="31px" ></a>
-<a href="https://www.twilio.com/" title="Twilio"><img src="https://github.com/get-icon/geticon/blob/master/icons/flask.svg" alt="Twilio" width="31px" height="31px"></a>
-<a href="https://notify.ly/" title="Notify"><img src="https://github.com/get-icon/geticon/blob/master/icons/flask.svg" alt="Notify" width="31px" height="31px"></a>
-
 **Client:**
-* [React](https://reactjs.org/)
-* [TailwindCSS](https://tailwindcss.com/)
+<a href="https://reactjs.org/" title="React"><img src="https://github.com/utsavk28/MS-Code-to-Give-Hackathon/client/src/assets/images/react-2.svg" alt="Reactjs" width="31px" height="31px"></a>
+<a href="https://tailwindcss.com/" title="Tailwind"><img src="https://github.com/utsavk28/MS-Code-to-Give-Hackathon/client/src/assets/images/tailwind-css-2.svg" alt="TailwindCSS" width="31px" height="31px"></a>
 
 **Server:**
-* [Postgresql](https://www.postgresql.org/)
-* [FastAPI](https://fastapi.tiangolo.com/)
-* [Twilio](https://www.twilio.com/)
-* [Notify](https://notify.ly/)
+<a href="https://www.postgresql.org/" title="Postgresql"><img src="https://github.com/utsavk28/MS-Code-to-Give-Hackathon/client/src/assets/images/postgresql.svg" alt="Postgresql" width="31px" height="31px"></a>
+<a href="https://fastapi.tiangolo.com/" title="FastAPI"><img src="https://github.com/utsavk28/MS-Code-to-Give-Hackathon/client/src/assets/images/fastapi-1.svg" alt="FastAPI" width="31px" height="31px" ></a>
+<a href="https://www.twilio.com/" title="Twilio"><img src="https://github.com/utsavk28/MS-Code-to-Give-Hackathon/client/src/assets/images/twilio-2.svg" alt="Twilio" width="31px" height="31px"></a>
+<a href="https://notify.ly/" title="Notify"><img src="https://github.com/utsavk28/MS-Code-to-Give-Hackathon/client/src/assets/images/notify.svg" alt="Notify" width="31px" height="31px"></a>
 
 
 <!-- GETTING STARTED -->
