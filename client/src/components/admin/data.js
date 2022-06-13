@@ -1,14 +1,14 @@
 const pie_data = {
-    labels: ['Red', 'Blue'],
+    labels: ['Applied', 'Approved'],
     datasets: [
         {
             label: '# of Votes',
             data: [12, 19],
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
+                'rgba(245, 130, 32, 0.4)',
+                'rgba(0, 97, 49, 0.4)',
             ],
-            borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)'],
+            borderColor: ['rgba(245, 130, 32, 1)', 'rgba(0, 97, 49, 1)'],
             borderWidth: 1,
         },
     ],

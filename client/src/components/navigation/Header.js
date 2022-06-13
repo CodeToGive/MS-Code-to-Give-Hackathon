@@ -4,6 +4,9 @@ import avatar from '../../assets/images/avatar.png';
 import DropdownBtn from '../util/buttons/DropdownBtn';
 import { header_styles as styles, nav_elements } from './data';
 import { useSelector } from 'react-redux';
+import { useTranslation,Trans } from 'react-i18next';
+import { MyDropdown } from './MyDropdown';
+
 
 const Navbar = () => {
     const { isLoggedIn: adminIsLoggedIn } = useSelector(
@@ -14,6 +17,7 @@ const Navbar = () => {
     const [profileOpen, setProfileOpen] = useState(false);
 
     return (
+        <>
         <nav className='bg-white shadow m-2 border-gray-200 px-2 sm:px-4 py-2.5 rounded  overflow-auto'>
             <div className='container flex flex-wrap justify-between items-center mx-auto p-2'>
                 <a href='/' className='flex items-center'>
@@ -21,7 +25,7 @@ const Navbar = () => {
                     <span className='self-center text-xl font-semibold whitespace-nowrap '>
                         St. Judes for Life
                     </span>
-                </a>
+                </a>              
                 {adminIsLoggedIn && (
                     <div className='flex items-center md:order-2'>
                         <button
@@ -143,7 +147,11 @@ const Navbar = () => {
                     </ul>
                 </div>
             </div>
+            
+
         </nav>
+        <MyDropdown/>
+        </>
     );
 };
 

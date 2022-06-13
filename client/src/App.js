@@ -37,8 +37,9 @@ function App() {
                     <Route path='/aboutus' element={<AboutUs/>} />
                     <Route path='/admin' element={<AdminDashboard />} />
                     <Route path='/apply-aid' element={<AppyAID />} />
+                    {/* <Route path='/apply-aid2' element={<ProfilePageFinancial />} /> */}
                     <Route
-                        path='ProfilePageFinancial'
+                        path='/ProfilePageFinancial'
                         element={<ProfilePageFinancial />}
                     />
                 </Routes>
