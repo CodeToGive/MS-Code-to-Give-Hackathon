@@ -4,6 +4,8 @@ import AuthService from '../services/auth.service';
 
 const user = JSON.parse(localStorage.getItem('user'));
 
+export const loadUser='';
+
 export const login = createAsyncThunk(
     'auth/login',
     async ({ username, password }, thunkAPI) => {

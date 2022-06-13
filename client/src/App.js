@@ -11,11 +11,18 @@ import ProfilePageFinancial from './components/profile/ProfilePageFinancial';
 import Profile from './components/profile/Profile';
 import HowItWorks from './components/how-it-works/HowItWorks';
 import ScheduleMeet from './components/profile/ScheduleMeet';
-import Adminpanel from './components/admindashboard/Adminpanel';
 import AdminDashboard from './components/admin/AdminDashboard';
-import { alert } from './redux/slices/alert';
+import { AboutUs } from './components/navigation/AboutUs';
+import { loadAdmin } from './redux/slices/adminAuth';
 
 function App() {
+    const { token } = useSelector((state) => state.adminAuth);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(loadAdmin());
+    }, [dispatch]);
+
     return (
         <div className='min-h-screen'>
             <Header />
@@ -27,8 +34,8 @@ function App() {
                     <Route path='/schedule-meet' element={<ScheduleMeet />} />
                     <Route path='/login' element={<Login />} />
                     <Route path='/admin-login' element={<AdminLogin />} />
+                    <Route path='/aboutus' element={<AboutUs/>} />
                     <Route path='/admin' element={<AdminDashboard />} />
-                    <Route path='/admin2' element={<Adminpanel />} />
                     <Route path='/apply-aid' element={<AppyAID />} />
                     <Route
                         path='ProfilePageFinancial'

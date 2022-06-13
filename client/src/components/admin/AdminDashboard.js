@@ -1,15 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Donation from './Donation';
 import Requests from './Requests';
 import ViewRegistration from './ViewRegistration';
+import { getAdmins, getUsers, getAllAid } from '../../redux/slices/admin';
 
 const AdminDashboard = () => {
+    const {
+        admin: { admins, users, aids },
+        adminAuth: { admin },
+    } = useSelector((state) => state);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getAdmins());
+        dispatch(getUsers());
+        dispatch(getAllAid());
+    }, [admin, dispatch]);
+
     return (
         <div className='m-2'>
-            {/* <h1 className='text-center text-3xl'>AdminDashboard</h1> */}
             <Donation />
-            <ViewRegistration />
-            <Requests />
+            <Requests aids={aids} />
+            <ViewRegistration admins={admins} users={users} />
         </div>
     );
 };

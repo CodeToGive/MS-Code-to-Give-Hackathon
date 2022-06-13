@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 from database import get_db
 from schemas import User, UserLogin, Document
 from middleware.hasher import create_hash, verify_hash
-from middleware.oauth2 import create_access_token, verify_token
+from middleware.oauth2 import create_access_token, verify_user_token, verify_admin_token
 import models
 
 user_router = APIRouter(
@@ -33,14 +33,21 @@ def login(creds: UserLogin, db: Session = Depends(get_db)):
 
 
 @user_router.get('/get_current_user', response_model=User)
-def get_current_user(db: Session = Depends(get_db), verif=Depends(verify_token)):
-    uid = verif.get('uid')
+def get_current_user(db: Session = Depends(get_db), verif=Depends(verify_user_token)):
+    uid = verif
     user = db.query(models.Users).filter(models.Users.uid == uid).one_or_none()
 
     return user
 
 
+@user_router.get('/get_all_users', response_model=List[User])
+def get_current_user(db: Session = Depends(get_db), verif=Depends(verify_admin_token)):
+    users = db.query(models.Users).all()
+
+    return users
+
+
 @user_router.post('/upload')
-def upload_docs(docs: List[Document], verif=Depends(verify_token)):
+def upload_docs(docs: List[Document], verif=Depends(verify_user_token)):
     for document in docs:
         print(document.document_name)

@@ -3,11 +3,13 @@ import { schedule_meet_styles as styles } from './data';
 
 const ScheduleMeet = () => {
     return (
-        <div className='container m-auto'>
-            <h1 className='text-4xl font-mono'>Schedule Meet</h1>
+        <>
+            <h1 className='text-4xl font-mono m-5'>Schedule Meet</h1>
+            <div className='container flex items-stretch items-center justify-center'>
+            
             <a
                 href='/#'
-                className='flex divide-x w-full p-6 bg-pink rounded-lg border border-gray-200 shadow-md  bg-yellow-100'
+                className='flex divide-x w-4/5 p-6 bg-pink rounded-lg border border-gray-200 shadow-md  bg-gray-100'
             >
                 <div className='p-6'>
                     <h5 className='mb-2 text-2xl font-bold tracking-tight text-gray-900 '>
@@ -19,7 +21,7 @@ const ScheduleMeet = () => {
                     </p>
                     <br></br>
                     <a href='/#' className={styles['links']}>
-                        Confirm appointment
+                       Confirm appointment
                         <svg
                             className='ml-2 -mr-1 w-4 h-4'
                             fill='currentColor'
@@ -45,7 +47,8 @@ const ScheduleMeet = () => {
                     <br></br>
                     <div className='flex gap-10 items-center justify-center'>
                         <a href='/#' className={styles['links']}>
-                            Schedule
+                        Schedule
+                            
                             <svg
                                 className='ml-2 -mr-1 w-4 h-4'
                                 fill='currentColor'
@@ -63,6 +66,8 @@ const ScheduleMeet = () => {
                 </div>
             </a>
         </div>
+        </>
+      
     );
 };
 

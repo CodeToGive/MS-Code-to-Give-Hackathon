@@ -10,8 +10,14 @@ class Admin(BaseModel):
         orm_mode = True
 
 
-class AdminCreate(Admin):
+class AdminCreateTemp(Admin):
     admin_password: str
+    admin_email: EmailStr
+
+
+class AdminCreate(Admin):
+    admin_email: EmailStr
+    admin_password: str | None = None
 
 
 class AdminLogin(BaseModel):
@@ -33,8 +39,8 @@ class User(BaseModel):
 
 
 class UserCreate(User):
-    password: str
     paypal_acc: constr(max_length=16)
+    password: str | None = None
 
 
 class UserLogin(BaseModel):
@@ -52,3 +58,14 @@ class Document(BaseModel):
 
     class Config:
         orm_mode = True
+
+
+class Application(BaseModel):
+    scheme_name: str
+    subscheme_name: str
+    user_id: str
+
+
+class ApplicationReq(BaseModel):
+    application_id: str
+    status: str
