@@ -3,7 +3,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="">
     <img src="https://utsavk28.github.io/MS-Code-to-Give-Hackathon/client/src/assets/images/logo.png" alt="Logo" width="240" >
   </a>
 
@@ -27,19 +27,18 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-       <li><a href="#features">Features</a></li>
+	<li><a href="#screenshots">Screenshots</a></li>
+        <li><a href="#features">Features</a></li>
         <li><a href="#tech-stack">Tech Stack</a></li>
       </ul>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#authors">Authors</a></li>
+    <li><a href="#mentors">Mentors</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
@@ -52,93 +51,100 @@ This website is for St. Judes For Life(SJFL) organisation started by Morgan Stan
 
 
 <!-- SCREENSHOTS -->
-## Screenshots and Recording
-<a href="https://drive.google.com/drive/folders/1YKGWJasp8ExKkRY1fe2elq5lsvGCJt70?usp=sharing">Drive link</a>
+## Screenshots
 <br>
-<b>Home Page UI</b>
- <br>
 <table>
   <tr>
-    <td><b> Home Page Search section </b></td>
-     <td><b> Top Artists </b></td>
+    <td><b> Home Page </b></td>
+     <td><b> Home Page </b></td>
   </tr>
   <tr>
-    <td><img src = "https://github.com/ananya-bangera/Music_Mania/blob/main/images/HomePage.png" width = 700></td>
-    <td><img src = "https://github.com/ananya-bangera/Music_Mania/blob/main/images/TopArtists.png" width = 700></td>
+    <td><img src = "" width = 700></td>
+    <td><img src = "" width = 700></td>
   </tr>
  </table>
  <br>
 
-<br>
-<b></b>
- <br>
 <table>
   <tr>
-    <td><b> About Us UI </b></td>
-     <td><b>FeedBack UI </b></td>
+    <td><b> About Us Page </b></td>
+     <td><b> How It Works Page </b></td>
   </tr>
   <tr>
-    <td><img src = "https://github.com/ananya-bangera/Music_Mania/blob/main/images/AboutUs.png" width = 500></td>
-    <td><img src = "https://github.com/ananya-bangera/Music_Mania/blob/main/images/FeedBack.png" width = 500></td>
+    <td><img src = "" width = 500></td>
+    <td><img src = "" width = 500></td>
   </tr>
  </table>
  <br>
 
-<br>
-<b></b>
- <br>
 <table>
   <tr>
-     <td><b> Tracker UI </b></td>
+     <td><b> User Login Page </b></td>
+     <td><b> Admin Login Page </b></td>
   </tr>
   <tr>
-    <td><img src = "https://github.com/ananya-bangera/Music_Mania/blob/main/images/Tracker.png" width = 500></td>
-
+    <td><img src = "" width = 500></td>
+    <td><img src = "" width = 500></td>
   </tr>
  </table>
  <br>
- <br>
-<b> User Credentials</b>
- <br>
+ 
 <table>
   <tr>
-    <td><b> Register Page UI </b></td>
-     <td><b> Login Page UI </b></td>
+    <td><b> User Profile Page </b></td>
+    <td><b> Admin Dashboard </b></td>
   </tr>
   <tr>
-    <td><img src = "https://github.com/ananya-bangera/Music_Mania/blob/main/images/Register.png" width = 500></td>
-    <td><img src = "https://github.com/ananya-bangera/Music_Mania/blob/main/images/LoginPage.png" width = 500></td>
-
+    <td><img src = "" width = 500></td>
+    <td><img src = "" width = 500></td>
   </tr>
  </table>
  <br>
- <br>
-<b>User Credentials</b>
- <br>
+ 
 <table>
   <tr>
-    <td><b> Reset Password UI </b></td>
-     <td><b> Email </b></td>
-     <td><b> Change Password  UI </b></td>
+    <td><b>  </b></td>
+    <td><b>  </b></td>
   </tr>
   <tr>
-    <td><img src = "https://github.com/ananya-bangera/Music_Mania/blob/main/images/ResetPassword.png" width = 500></td>
-    <td><img src = "https://github.com/ananya-bangera/Music_Mania/blob/main/images/Email.png" width = 500></td>
-    <td><img src = "https://github.com/ananya-bangera/Music_Mania/blob/main/images/PasswordReset.png" width = 500></td>
+    <td><img src = "" width = 500></td>
+    <td><img src = "" width = 500></td>
   </tr>
  </table>
  <br>
-  <br>
-<b></b>
- <br>
+ 
 <table>
   <tr>
-    <td><b> Albums UI </b></td>
-   <td><b> Media Player UI </b></td>
+    <td><b>  </b></td>
+    <td><b>  </b></td>
   </tr>
   <tr>
-    <td><img src = "https://github.com/ananya-bangera/Music_Mania/blob/main/images/Albums.png" width = 500></td>
-    <td><img src = "https://github.com/ananya-bangera/Music_Mania/blob/main/images/MediaPlayer.png" width = 500></td>
+    <td><img src = "" width = 500></td>
+    <td><img src = "" width = 500></td>
+  </tr>
+ </table>
+ <br>
+ 
+ <table>
+  <tr>
+    <td><b>  </b></td>
+    <td><b>  </b></td>
+  </tr>
+  <tr>
+    <td><img src = "" width = 500></td>
+    <td><img src = "" width = 500></td>
+  </tr>
+ </table>
+ <br>
+ 
+ <table>
+  <tr>
+    <td><b>  </b></td>
+    <td><b>  </b></td>
+  </tr>
+  <tr>
+    <td><img src = "" width = 500></td>
+    <td><img src = "" width = 500></td>
   </tr>
  </table>
  <br>
@@ -250,10 +256,8 @@ The beneficiaries of St. Judes India ChildCare Centres can request for aid in va
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a list of proposed features (and known issues).
-
  - [x] Phase 1
-	 - CRUD Operations on Posts, Comments and Profile 
+	 - CRUD Operations on Admin, User login,  
 	 - CRUD operation on Posts, Profile and Comments
 	- Like/Unlike Post & Comments
 - [x] Phase 2
