@@ -21,7 +21,7 @@ def admin_login(creds: AdminLogin, db: Session = Depends(get_db)):
     if not admin:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED, detail='Invalid Credentials 1')
-
+    print(create_hash(creds.admin_password))
     if not verify_hash(creds.admin_password, admin.admin_password):
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED, detail='Invalid Credentials 2')
