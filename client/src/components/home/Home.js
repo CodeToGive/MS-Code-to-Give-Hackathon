@@ -9,8 +9,8 @@ const Home = () => {
     return (
         <div className='container mx-auto'>
             <CarouselSection />
-            <Howitworks />
             <Whoarewe />
+            <Howitworks />
             <Benefeciaries />
         </div>
     );
