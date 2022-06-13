@@ -13,9 +13,7 @@ const header_styles = {
     home_link: `${base_link_style} text-lg text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0`,
     link: `${base_link_style} text-lg text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0`,
 };
-const lang_elements = [
-    
-]
+const lang_elements = [];
 const nav_elements = {
     dropdown_nav: [
         {
@@ -47,11 +45,11 @@ const nav_elements = {
             style_attr: 'link',
             link: 'how-it-works',
         },
-        {
-            name: 'Profile',
-            style_attr: 'link',
-            link: '/profile',
-        },
+        // {
+        //     name: 'Profile',
+        //     style_attr: 'link',
+        //     link: '/profile',
+        // },
     ],
 };
 

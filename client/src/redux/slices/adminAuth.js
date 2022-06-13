@@ -32,26 +32,6 @@ export const loadAdmin = createAsyncThunk(
     }
 );
 
-export const register = createAsyncThunk(
-    'authAdmin/register',
-    async ({ username, email, password }, thunkAPI) => {
-        try {
-            const response = await axios.post(`${url}/admin/register`, {});
-            thunkAPI.dispatch(alert(response.data.message));
-            return response.data;
-        } catch (error) {
-            const message =
-                (error.response &&
-                    error.response.data &&
-                    error.response.data.message) ||
-                error.message ||
-                error.toString();
-            thunkAPI.dispatch(alert(message));
-            return thunkAPI.rejectWithValue();
-        }
-    }
-);
-
 export const login = createAsyncThunk(
     'authAdmin/login',
     async ({ username, password }, thunkAPI) => {
@@ -88,14 +68,6 @@ const authSlice = createSlice({
     },
     reducers: {},
     extraReducers: {
-        [register.fulfilled]: (state, action) => {
-            state.isLoggedIn = false;
-            state.token = action.payload.admin_access_token;
-        },
-        [register.rejected]: (state, action) => {
-            state.isLoggedIn = false;
-            localStorage.removeItem('adminToken');
-        },
         [login.fulfilled]: (state, action) => {
             state.isLoggedIn = true;
             state.token = action.payload.admin_access_token;
@@ -123,6 +95,7 @@ const authSlice = createSlice({
         },
     },
 });
+
 export const {} = authSlice.actions;
 
 export default authSlice.reducer;

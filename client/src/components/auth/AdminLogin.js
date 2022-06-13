@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import care from '../../assets/gifs/Care.png';
 import { login } from '../../redux/slices/adminAuth';
+import { loadAdmin } from '../../redux/slices/adminAuth';
 
 const AdminLogin = () => {
     const dispatch = useDispatch();
@@ -26,6 +27,10 @@ const AdminLogin = () => {
             })
         );
     };
+
+    useEffect(() => {
+        dispatch(loadAdmin());
+    }, [dispatch]);
 
     return (
         <div className='relative w-4/5 m-auto h-full lg:flex lg:flex-row grid place-items-center border rounded-[20px]'>
@@ -57,13 +62,13 @@ const AdminLogin = () => {
                     </div>
                     <div className='flex justify-center items-center'>
                         <button
-                            className='m-5 bg-white hover:bg-custom-primary text-custom-primary-dark font-semibold hover:text-white py-2 px-4 border border-custom-primary-dark hover:border-transparent rounded'                            type='submit'
+                            className='m-5 bg-white hover:bg-custom-primary text-custom-primary-dark font-semibold hover:text-white py-2 px-4 border border-custom-primary-dark hover:border-transparent rounded'
+                            type='submit'
                             onClick={submitForm}
                         >
                             Login
                         </button>
                     </div>
-                    
                 </form>
             </div>
         </div>

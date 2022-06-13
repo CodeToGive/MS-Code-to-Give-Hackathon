@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Home from './components/home/Home';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import Header from './components/navigation/Header';
 import Footer from './components/navigation/Footer';
 import Login from './components/auth/Login';
@@ -13,14 +13,12 @@ import HowItWorks from './components/how-it-works/HowItWorks';
 import ScheduleMeet from './components/profile/ScheduleMeet';
 import AdminDashboard from './components/admin/AdminDashboard';
 import { AboutUs } from './components/navigation/AboutUs';
-import { loadAdmin } from './redux/slices/adminAuth';
+import { loadUser } from './redux/slices/auth';
 
 function App() {
-    const { token } = useSelector((state) => state.adminAuth);
     const dispatch = useDispatch();
-
     useEffect(() => {
-        dispatch(loadAdmin());
+        dispatch(loadUser());
     }, [dispatch]);
 
     return (
@@ -34,7 +32,7 @@ function App() {
                     <Route path='/schedule-meet' element={<ScheduleMeet />} />
                     <Route path='/login' element={<Login />} />
                     <Route path='/admin-login' element={<AdminLogin />} />
-                    <Route path='/aboutus' element={<AboutUs/>} />
+                    <Route path='/aboutus' element={<AboutUs />} />
                     <Route path='/admin' element={<AdminDashboard />} />
                     <Route path='/apply-aid' element={<AppyAID />} />
                     {/* <Route path='/apply-aid2' element={<ProfilePageFinancial />} /> */}
