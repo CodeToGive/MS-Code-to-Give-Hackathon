@@ -27,6 +27,7 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
+	<li><a href="#links">Links</a></li>
 	<li><a href="#screenshots">Screenshots</a></li>
         <li><a href="#features">Features</a></li>
         <li><a href="#tech-stack">Tech Stack</a></li>
@@ -46,8 +47,7 @@ This website is for St. Judes For Life(SJFL) organisation started by Morgan Stan
 
 ## 🔗Links
 
-* GitHub repo : [<a href="https://github.com/ananya-bangera/Music_Mania.git">Click here </a>]
-* Drive : [<a href="https://drive.google.com/drive/folders/1YKGWJasp8ExKkRY1fe2elq5lsvGCJt70?usp=sharing">Click here </a>]
+* GitHub repo : [<a href="https://github.com/utsavk28/MS-Code-to-Give-Hackathon">Click here </a>]
 
 <!-- SCREENSHOTS -->
 ## 📱Screenshots
