@@ -1,10 +1,10 @@
-# MS-Code-to-Give-Hackathon
+# MS-Code-to-Give Team S2
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
   <a href="">
-    <img src="https://utsavk28.github.io/MS-Code-to-Give-Hackathon/client/src/assets/images/logo.png" alt="Logo" width="240" >
+    <img src="/client/src/assets/images/logo.png" alt="Logo" width="240" >
   </a>
 
   <h2 align="center">St. Judes For Life</h2>
@@ -14,9 +14,9 @@
     <br />
     <a href="https://detective-dog.netlify.app/">View Demo</a>
     ·
-    <a href="https://github.com/utsavk28/DetectiveDog/issues">Report Bug</a>
+    <a href="https://github.com/utsavk28/MS-Code-to-Give-Hackathon/issues">Report Bug</a>
     ·
-    <a href="https://github.com/utsavk28/DetectiveDog/issues">Request Feature</a>
+    <a href="https://github.com/utsavk28/MS-Code-to-Give-Hackathon/issues">Request Feature</a>
   </p>
 </div>
 
@@ -27,31 +27,30 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
+	<li><a href="#links">Links</a></li>
 	<li><a href="#screenshots">Screenshots</a></li>
         <li><a href="#features">Features</a></li>
         <li><a href="#tech-stack">Tech Stack</a></li>
       </ul>
     </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-    </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#authors">Authors</a></li>
     <li><a href="#mentors">Mentors</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## 📝About The Project
 This website is for St. Judes For Life(SJFL) organisation started by Morgan Stanley. The website offers multilingual characteristics by providing 5 different languages for the user to read and underatand everything. The website provides smooth working process of requesting aid by user, uploading documents, verifying the request by administrator, accepting or rejecting the aid accordingly and giving aid to the user if accepted. Documents are stored safely and the donations are maintained in the database securely. The platform is be able to notify the SJFL team of incoming requests through email. 
 
+## 🔗Links
+
+* GitHub repo : [<a href="https://github.com/utsavk28/MS-Code-to-Give-Hackathon">Click here </a>]
 
 <!-- SCREENSHOTS -->
-## Screenshots
+## 📱Screenshots
 <br>
 <table>
   <tr>
@@ -149,7 +148,7 @@ This website is for St. Judes For Life(SJFL) organisation started by Morgan Stan
  </table>
  <br>
 
-### Features
+## 🖥Features
 
 - Multilingual interface
 - Facility to upload documents
@@ -158,42 +157,27 @@ This website is for St. Judes For Life(SJFL) organisation started by Morgan Stan
 - Responsive and easy to understand design
 - Ability to receive Donations and send Aid
 
-## Tech Stack
+## 🤖Tech Stack
 
-**Client:**
-<a href="https://reactjs.org/" title="React"><img src="https://github.com/utsavk28/MS-Code-to-Give-Hackathon/client/src/assets/images/react-2.svg" alt="Reactjs" width="31px" height="31px"></a>
-<a href="https://tailwindcss.com/" title="Tailwind"><img src="https://github.com/utsavk28/MS-Code-to-Give-Hackathon/client/src/assets/images/tailwind-css-2.svg" alt="TailwindCSS" width="31px" height="31px"></a>
+**Client:**  
+<a href="https://reactjs.org/" title="React"><img src="/client/src/assets/images/react-2.svg" alt="Reactjs" width="31px" height="31px"></a>
+<a href="https://tailwindcss.com/" title="Tailwind"><img src="/client/src/assets/images/tailwind-css-2.svg" alt="TailwindCSS" width="31px" height="31px"></a>
 
-**Server:**
-<a href="https://www.postgresql.org/" title="Postgresql"><img src="https://github.com/utsavk28/MS-Code-to-Give-Hackathon/client/src/assets/images/postgresql.svg" alt="Postgresql" width="31px" height="31px"></a>
-<a href="https://fastapi.tiangolo.com/" title="FastAPI"><img src="https://github.com/utsavk28/MS-Code-to-Give-Hackathon/client/src/assets/images/fastapi-1.svg" alt="FastAPI" width="31px" height="31px" ></a>
-<a href="https://www.twilio.com/" title="Twilio"><img src="https://github.com/utsavk28/MS-Code-to-Give-Hackathon/client/src/assets/images/twilio-2.svg" alt="Twilio" width="31px" height="31px"></a>
-<a href="https://notify.ly/" title="Notify"><img src="https://github.com/utsavk28/MS-Code-to-Give-Hackathon/client/src/assets/images/notify.svg" alt="Notify" width="31px" height="31px"></a>
+**Server:**  
+<a href="https://www.postgresql.org/" title="Postgresql"><img src="/client/src/assets/images/postgresql.svg" alt="Postgresql" width="31px" height="31px"></a>
+<a href="https://fastapi.tiangolo.com/" title="FastAPI"><img src="/client/src/assets/images/fastapi-1.svg" alt="FastAPI" width="31px" height="31px" ></a>
+<a href="https://www.twilio.com/" title="Twilio"><img src="/client/src/assets/images/twilio-2.svg" alt="Twilio" width="31px" height="31px"></a>
+<a href="https://notify.ly/" title="Notify"><img src="/client/src/assets/images/notify.svg" alt="Notify" width="31px" height="31px"></a>
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## 🔧Usage
 
 The beneficiaries of St. Judes India ChildCare Centres can request for aid in various financial as well as non-financial aspects like Education,Health,Career Counselling,Life Skills etc in the future through the website of St. Judes For Life. Those who have received aid for cancer treatment by the SJICC can login and request aid. The Program Coordinators(Admins) can ask for and verify the documents submitted by beneficiaries and accept or reject their request accordingly. They can give aid and keep track of all the transactions for aid. The users can also opt to have a meeting with a volunteer through the website or request an offline meet. The site also provides means of accepting donations from donators. This website breaks the barriers between different parts of the world. It offers an easy online way of giving aid to beneficiaries. It also breaks language barriers by offering 5 different languages for the user.
 
 
-<!-- ROADMAP -->
-## Roadmap
-
- - [x] Phase 1
-	 - CRUD Operations on Admin, User login,  
-	 - CRUD operation on Posts, Profile and Comments
-	- Like/Unlike Post & Comments
-- [x] Phase 2
-	- Follow/Unfollow Users 
-	- Chat with your Friends with Real Time Chat Feature
-	- Save Posts
-	- Explore Page
-- [ ] Phase 3
-	- .
-
 <!-- AUTHORS -->
-## Authors
+##  👨‍💻Authors
 
 - [Utsavk28](https://github.com/utsavk28)
 - [Rushgala27](https://github.com/rushgala27)
@@ -204,7 +188,7 @@ The beneficiaries of St. Judes India ChildCare Centres can request for aid in va
 
 
 <!-- MENTORS -->
-## Mentors
+## 👨‍🏫Mentors
 
 
 - Pravin Patil
@@ -212,7 +196,7 @@ The beneficiaries of St. Judes India ChildCare Centres can request for aid in va
 
 
 <!-- CONTRIBUTING -->
-## Contributing
+## 🔮Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
 
@@ -227,16 +211,10 @@ If you have a suggestion that would make this better, please fork the repo and c
 
 
 <!-- LICENSE -->
-## License
+## 🖼License
 
 
 Distributed under the MIT License. See `LICENSE` for more information.
-
-
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-
-
 
 
 
