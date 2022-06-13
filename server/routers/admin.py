@@ -8,6 +8,7 @@ from schemas import AdminLogin, AdminCreate, UserCreate, User, Admin, AdminCreat
 from middleware.hasher import verify_hash, create_hash
 from middleware.oauth2 import create_access_token, verify_admin_token, verify_user_token
 import models
+from send_email import send_email_background
 
 admin_router = APIRouter(
     tags=['Admin'],
@@ -61,7 +62,8 @@ def create_admin(creds: AdminCreate, db: Session = Depends(get_db), verif=Depend
                             detail='user already registerd!')
     db.add(new_admin)
     db.commit()
-
+    s = "Username"+new_admin.admin_username + "\n"+ "Password :"+pwd
+    send_email_background("Login Credentials","abjoshi_b19@ce.vjti.ac.in",s)
     return new_admin
 
 
@@ -96,7 +98,8 @@ def create_user(creds: UserCreate, db: Session = Depends(get_db), verif=Depends(
 
     db.add(new_user)
     db.commit()
-
+    s = "UID :"+new_user.uid + "\n"+ "Password :"+pwd
+    send_email_background("Login Credentials",new_user.email,s)
     return new_user
 
 
