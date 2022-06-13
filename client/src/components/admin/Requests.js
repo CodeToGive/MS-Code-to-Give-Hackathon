@@ -8,22 +8,22 @@ const styles = {
 const navtabs = [
     {
         no: 0,
-        name: 'Admin Account Creation',
-        id: 'admin-account-creation',
+        name: 'Aid Requests',
+        id: 'aid-requests',
     },
     {
         no: 1,
-        name: 'Meet Requests',
-        id: 'meet-requests',
-    },
-    {
-        no: 2,
         name: 'Document Verification',
         id: 'document-verification',
     },
+    {
+        no: 2,
+        name: 'Admin Account Creation',
+        id: 'admin-account-creation',
+    },
 ];
 
-const Requests = () => {
+const Requests = ({ aids }) => {
     const [activeTab, setActiveTab] = useState(0);
 
     useEffect(() => {
@@ -61,7 +61,28 @@ const Requests = () => {
                 })}
             </ul>
             <div className='tab-content' id='tabs-tabContent'>
-                {navtabs.map((tab, idx) => {
+                <div
+                    className={`tab-pane fade show active m-1 p-1 grow ${
+                        0 !== activeTab ? 'hidden' : ''
+                    }`}
+                >
+                    <div className='shadow rounded-lg p-2'>
+                        <ul>
+                            {aids.map((el, idx) => {
+                                return (
+                                    <li key={idx}>
+                                        <div>
+                                            {el.scheme_name} {el.subscheme_name}
+                                            <div>{el.application_id} {el.status}</div>
+                                            
+                                        </div>
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                    </div>
+                </div>
+                {navtabs.slice(1).map((tab, idx) => {
                     return (
                         <div
                             key={idx}

@@ -6,7 +6,8 @@ from os import environ
 
 SQLALCHEMY_DATABASE_URL = 'postgresql://postgres:%s@localhost/dev' % quote(
     environ["POSTGRES_PASS"])
-
+# SQLALCHEMY_DATABASE_URL = 'postgresql://postgres:%s@localhost/dev' % quote(
+#     'Utsav@2002')
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
 local_session = sessionmaker(bind=engine, autocommit=False, autoflush=False)

@@ -12,25 +12,25 @@ const Login = () => {
             />
             <div className='bg-gray-300 w-full grid place-items-center p-10 lg:rounded-[20px] sm:rounded-b-[20px]'>
                 <form className='font-mono space-y-2 w-full m-10'>
-                    <div className='m-2'>
-                        <label className='text-xl m-3'>Email&nbsp;&nbsp;</label>
+                    <div>
+                        <label className='text-2xl'>Email</label>
                         <input
                             type='email'
-                            className='rounded-[20px] w-3/5 p-1 m-2'
+                            className='rounded-[8px] w-3/5 '
                         ></input>
                     </div>
-                    <div className='m-2'>
-                        <label className='text-xl m-3'>UID&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <div>
+                        <label className='text-2xl'>UID</label>
                         <input
                             type='text'
-                            className='rounded-[20px] w-3/5 p-1 m-2'
+                            className=' rounded-[8px] w-3/5'
                         ></input>
                     </div>
-                    <div className='m-2'>
-                        <label className='text-xl m-3'>Password</label>
+                    <div>
+                        <label className='text-2xl'>Password</label>
                         <input
                             type='password'
-                            className='rounded-[20px] w-3/5 p-1 m-2'
+                            className='rounded-[8px] w-3/5'
                         ></input>
                     </div>
                     <LoginButton />

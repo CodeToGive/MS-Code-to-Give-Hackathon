@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import ReactFlow, { Controls, Background } from 'react-flow-renderer';
 import { initialNodesData, styles } from './data';
-import { DetailsOfHowItWorks } from './DetailsOfHowItWorks';
-import { useTranslation,Trans } from 'react-i18next';
 
 const HowItWorks = () => {
-    const { t, i18n } = useTranslation();
     const nodes = initialNodesData.map((node) => {
         return {
             id: node.id,
@@ -38,7 +35,6 @@ const HowItWorks = () => {
     return (
         <div>
             <div className='container h-[600px] m-auto'>
-                <DetailsOfHowItWorks/>
                 <ReactFlow id='applyToAid' nodes={nodes} edges={edges} fitView>
                     <Controls />
                     <Background color='#aaa' gap={16} />

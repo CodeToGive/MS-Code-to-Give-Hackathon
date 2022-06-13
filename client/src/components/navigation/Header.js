@@ -4,8 +4,6 @@ import avatar from '../../assets/images/avatar.png';
 import DropdownBtn from '../util/buttons/DropdownBtn';
 import { header_styles as styles, nav_elements } from './data';
 import { useSelector } from 'react-redux';
-import { useTranslation,Trans } from 'react-i18next';
-
 
 const Navbar = () => {
     const { isLoggedIn: adminIsLoggedIn } = useSelector(
@@ -14,10 +12,6 @@ const Navbar = () => {
 
     const [navbarOpen, setNavbarOpen] = useState(false);
     const [profileOpen, setProfileOpen] = useState(false);
-    const { t, i18n } = useTranslation();
-    function handleClick(lang){
-        i18n.changeLanguage(lang)
-    };  
 
     return (
         <nav className='bg-white shadow m-2 border-gray-200 px-2 sm:px-4 py-2.5 rounded  overflow-auto'>
@@ -28,21 +22,6 @@ const Navbar = () => {
                         St. Judes for Life
                     </span>
                 </a>
-                <button className='bg-gray-200 p-1 rounded-[8px]' onClick={() => handleClick('hi')} >
-                    Hindi
-                </button>
-                <button className='bg-gray-200 p-1 rounded-[8px]' onClick={() => handleClick('en')} >
-                    English
-                </button>
-                <button className='bg-gray-200 p-1 rounded-[8px]' onClick={() => handleClick('kn')} >
-                    Kannada
-                </button>
-                <button className='bg-gray-200 p-1 rounded-[8px]' onClick={() => handleClick('gu')} >
-                    Gujarati
-                </button>
-                <button className='bg-gray-200 p-1 rounded-[8px]' onClick={() => handleClick('ma')} >
-                    Marathi
-                </button>
                 {adminIsLoggedIn && (
                     <div className='flex items-center md:order-2'>
                         <button

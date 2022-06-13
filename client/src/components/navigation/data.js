@@ -45,11 +45,6 @@ const nav_elements = {
             style_attr: 'link',
             link: 'how-it-works',
         },
-        {
-            name: 'Profile',
-            style_attr: 'link',
-            link: '/profile',
-        },
     ],
 };
 
