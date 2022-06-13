@@ -17,7 +17,7 @@ class AdminCreateTemp(Admin):
 
 class AdminCreate(Admin):
     admin_email: EmailStr
-    admin_password: str | None = None
+    admin_password: str
 
 
 class AdminLogin(BaseModel):
@@ -40,7 +40,7 @@ class User(BaseModel):
 
 class UserCreate(User):
     paypal_acc: constr(max_length=16)
-    password: str | None = None
+    password: str 
 
 
 class UserLogin(BaseModel):
