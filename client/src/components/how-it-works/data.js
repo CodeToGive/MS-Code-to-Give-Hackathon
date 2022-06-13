@@ -1,5 +1,5 @@
 const styles = {
-    node: ' block max-w-sm bg-pink rounded-lg border border-gray-200 shadow-md   transition ease-in-out delay-100 bg-gradient-to-r from-sky-500 to-indigo-500  hover:-translate-y-1 hover:scale-110  hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500  duration-300',
+    node: ' block max-w-sm bg-pink rounded-lg border border-gray-200 shadow-md hover:-translate-y-1 hover:scale-110  hover:bg-custom-primary-dark bg-custom-primary  duration-300',
     node_text: 'text-xl font-bold tracking-tight text-gray-900 ',
 };
 const initialNodesData = [

@@ -37,31 +37,33 @@ const AdminLogin = () => {
             />
             <div className='bg-gray-300 w-full grid place-items-center p-10 lg:rounded-[20px] sm:rounded-b-[20px]'>
                 <form className='font-mono space-y-2 w-full m-10'>
-                    <div>
-                        <label className='text-2xl'>Username</label>
+                    <div className='m-2'>
+                        <label className='text-xl m-3'>Username</label>
                         <input
                             type='text'
                             name='username'
-                            className='rounded-[8px] w-3/5 '
+                            className='rounded-[20px] w-3/5 p-1 m-2'
                             onChange={updateFormData}
                         ></input>
                     </div>
-                    <div>
-                        <label className='text-2xl'>Password</label>
+                    <div className='m-2'>
+                        <label className='text-xl m-3'>Password</label>
                         <input
                             type='password'
                             name='password'
-                            className='rounded-[8px] w-3/5'
+                            className='rounded-[20px] w-3/5 p-1 m-2'
                             onChange={updateFormData}
                         ></input>
                     </div>
-                    <button
-                        className='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded'
-                        type='submit'
-                        onClick={submitForm}
-                    >
-                        Button
-                    </button>
+                    <div className='flex justify-center items-center'>
+                        <button
+                            className='m-5 bg-transparent hover:bg-custom-primary text-custom-primary-dark font-semibold hover:text-white py-2 px-4 border border-custom-primary-dark hover:border-transparent rounded'                            type='submit'
+                            onClick={submitForm}
+                        >
+                            Button
+                        </button>
+                    </div>
+                    
                 </form>
             </div>
         </div>

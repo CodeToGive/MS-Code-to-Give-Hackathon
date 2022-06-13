@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import '../../../node_modules/awesome-react-steps/lib/css/arrows.css';
 import { Arrows } from 'awesome-react-steps';
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Howitworks = () => {
+    const {t} = useTranslation();
     const data = [
         'FILL IN YOUR DETAILS',
         'MAKE AN AID REQUEST',
@@ -25,7 +27,7 @@ const Howitworks = () => {
             <div className='inline-flex items-start ml-7 mx-5 mt-10 md:flex-wrap'>
                 <div className='max-w-8xl mr-5'>
                     <div className='text-4xl text-orange-500 font-extrabold '>
-                        How It Works
+                        {t('How It Works')}
                     </div>
                 </div>
             </div>
@@ -34,7 +36,7 @@ const Howitworks = () => {
                     model={{
                         steps: data.map((el) => {
                             return {
-                                label: el,
+                                label: t(el),
                             };
                         }),
                         current: activeStep,
@@ -45,7 +47,7 @@ const Howitworks = () => {
                         className='button bg-orange-500 text-white text-lg hover:bg-orange-600 rounded-md px-4 py-2 my-4 mx-auto'
                         href='/how-it-works'
                     >
-                        Know More
+                        {t('Know More')}
                     </a>
                 </div>
             </div>

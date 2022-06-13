@@ -88,31 +88,11 @@ export const createUser = createAsyncThunk(
     }
 );
 
-export const getAllAid = createAsyncThunk(
-    'admin/getAllAid',
-    async (thunkAPI) => {
-        try {
-            const response = await axios.get(`${url}requests/all`);
-            return response.data;
-        } catch (error) {
-            const message =
-                (error.response &&
-                    error.response.data &&
-                    error.response.data.message) ||
-                error.message ||
-                error.toString();
-            thunkAPI.dispatch(alert(message));
-            return thunkAPI.rejectWithValue();
-        }
-    }
-);
-
 const authSlice = createSlice({
     name: 'auth',
     initialState: {
         admins: [],
         users: [],
-        aids: [],
     },
     reducers: {},
     extraReducers: {
@@ -127,12 +107,6 @@ const authSlice = createSlice({
         },
         [getUsers.rejected]: (state, action) => {
             state.users = [];
-        },
-        [getAllAid.fulfilled]: (state, action) => {
-            state.aids = action.payload;
-        },
-        [getAllAid.rejected]: (state, action) => {
-            state.aids = [];
         },
     },
 });
